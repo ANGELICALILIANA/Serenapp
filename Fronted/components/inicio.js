@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableHighlight, Image } from 'react-native';
 import { Button } from 'react-native-elements';
-import { Input } from 'react-native-elements';
-import { SearchBar } from 'react-native-elements';
 
 export default function inicio(props) {
     return (
@@ -21,7 +19,8 @@ export default function inicio(props) {
                         <Button
                             title="INICIAR SESIÓN"
                             titleStyle={{ color: "white", fontSize: 20 }}
-                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200, marginBottom: 10 }}>
+                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200, marginBottom: 10 }}
+                            onPress={()=>{props.navigation.navigate('Login')}}>
                         </Button>
                         <Button
                             title="REGISTRARSE"
