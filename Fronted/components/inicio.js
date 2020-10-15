@@ -62,13 +62,9 @@ const styles = StyleSheet.create({
     texto: {
         width: '90%',
         color: '#2B8850',
-        fontSize: 100,
+        fontSize: 40,
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignContent: 'center',
-        marginLeft: 'auto',
-        marginTop: 'auto',
+        textAlign: 'center'
     },
     Descripcion: {
         paddingTop: 5,

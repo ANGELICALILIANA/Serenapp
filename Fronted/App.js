@@ -15,9 +15,10 @@ function inicioApp({ navigation }) {
 
 
 function App() {
-  return (
+  return (    
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio" headerMode="none"> 
+      <Stack.Navigator initialRouteName="Inicio" headerMode="none">
+      {/* <Text>Prueba</Text>  */}
         <Stack.Screen name="Inicio" component={inicioApp} /> 
       </Stack.Navigator>
     </NavigationContainer>
