@@ -14,7 +14,7 @@ export default function inicio(props) {
                 <View>
                     <Image
                         style={styles.iconoinicio}
-                        source={require('../assets/iconohomeunotransparente.png')} />
+                        source={require('../assets/Iconocontexto.png')} />
                 </View>
                 <View style={styles.Descripcion}>
                     <View style={styles.Boton}>
@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 180,
         marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: '-27%',
+        marginRight: 'auto'
     },
     texto: {
         width: '90%',
