@@ -10,28 +10,23 @@ export default function inicio(props) {
             style={styles.margenesVista}>
             <ImageBackground
                 source={require('../assets/Fondohomeunoserenapp.png')}
-                style={styles.imagenFondoEtologia}>
+                style={styles.imagenFondoInicio}>
                 <View>
                     <Image
-                        style={styles.iconoetologia}
-                        source={require('../assets/Iconocabezotesinmesadetrabajo.png')} />
-                </View>
-                <View style={styles.Descripcion}>
-                <Text style={styles.texto}>
-                    Serenapp
-                </Text>
+                        style={styles.iconoinicio}
+                        source={require('../assets/iconohomeunotransparente.png')} />
                 </View>
                 <View style={styles.Descripcion}>
                     <View style={styles.Boton}>
                         <Button
                             title="INICIAR SESIÓN"
                             titleStyle={{ color: "white", fontSize: 20 }}
-                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, margin: 'auto', color: "white", width: 200 }}>
+                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200, marginBottom: 10 }}>
                         </Button>
                         <Button
                             title="REGISTRARSE"
                             titleStyle={{ color: "white", fontSize: 20 }}
-                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, margin: 'auto', color: "white", width: 200 }}>
+                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200 }}>
                         </Button>
                     </View>
                 </View>
@@ -41,9 +36,8 @@ export default function inicio(props) {
 };
 
 const styles = StyleSheet.create({
-    imagenFondoEtologia: {
+    imagenFondoInicio: {
         position: 'absolute',
-        resizeMode: "cover",
         justifyContent: "center",
         width: '100%',
         height: '100%',
@@ -52,9 +46,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
-    iconoetologia: {
-        width: 80,
-        height: 80,
+    iconoinicio: {
+        width: 180,
+        height: 180,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: '-27%',
@@ -71,8 +65,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 175,
         marginLeft: 'auto',
-        marginRight: 'auto',
-        textAlign: 'justify',
-        marginLeft: '5%',
+        marginRight: 'auto'
     },
 });
