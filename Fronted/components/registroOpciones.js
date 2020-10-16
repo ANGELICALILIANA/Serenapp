@@ -15,12 +15,12 @@ export default function registroOpciones(props){
             </View>
             <View>
                 <TouchableHighlight onPress={()=>{ props.navigation.navigate('RegistroMusico')}}>
-                <Image style={styles.iconoinicio} source={require('../assets/Iconocontexto.png')} />
+                <Image style={styles.iconoinicio} source={require('../assets/Iconomusicos.png')} />
                 </TouchableHighlight>                
             </View>
             <View>
                 <TouchableHighlight onPress={()=>{ props.navigation.navigate('RegistroUser')}}>
-                <Image style={styles.iconoinicio} source={require('../assets/Iconocontexto.png')} />
+                <Image style={styles.iconoinicio} source={require('../assets/Iconousuarios.png')} />
                 </TouchableHighlight>                
             </View>
             </ImageBackground>
