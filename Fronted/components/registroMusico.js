@@ -1,27 +1,47 @@
 import React, {useEffect, useState} from 'react';
-import { ImageBackground, StyleSheet, Text, View , Image, Modal, Linking, TouchableHighlight} from 'react-native';
+import { ImageBackground, StyleSheet, Text, View , Image, Modal, Linking, TouchableHighlight, Picker} from 'react-native';
 import { Input } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function registroMusico(props){
+  const [selectedValue, setSelectedValue] = useState("Mariachi");
   return(
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <ImageBackground source={require('../assets/Fondohomeunoserenapp.png')} style={styles.image}>      
       {/* <View>
-      <TouchableHighlight onPress={()=>{ props.navigation.navigate('homeUno')}}>
-      <Image source={require('../assets/Iconocontexto.png')} style={styles.Cerrar}></Image>
+      <TouchableHighlight onPress={()=>{ props.navigation.navigate('OpcionesRegistro')}}>
+      <Image source={require('../assets/Iconoatrasazul.png')} style={styles.Cerrar}></Image>
       </TouchableHighlight>
-      </View>*/}
-      <Image source={require('../assets/Iconocontexto.png')} style={styles.imgLogo}></Image>
-      <Text style={styles.textlbl}>Nombre de usuario</Text>
+      </View> */}
+      <Text style={styles.textlbl2}>Registro Músicos</Text>
+      <Text style={styles.textlbl}>Nombre de Grupo</Text>
       <Input style={styles.textInput}/>
-      <Text style={styles.textlbl}>Email</Text>
+      <Text style={styles.textlbl}>Nombre de Encargado</Text>
       <Input style={styles.textInput}/>
+      <Text style={styles.textlbl}>Género Musical</Text>
+      <Picker
+        selectedValue={selectedValue}
+        style={{ height: 70, width: '90%', marginLeft: 20}}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Mariachi" value="1"/>
+        <Picker.Item label="Vallenato" value="2" />
+        <Picker.Item label="Trio" value="3" />
+        <Picker.Item label="Norteña" value="4" />
+        <Picker.Item label="Llanera" value="5" />
+        <Picker.Item label="Papayera" value="6" />
+        <Picker.Item label="Jazz" value="7" />
+        <Picker.Item label="Popular" value="8" />
+        <Picker.Item label="Salsa" value="9" />
+        <Picker.Item label="Rock" value="10" />
+      </Picker>
+      <Text style={styles.textlbl}>E-mail</Text>
+      <Input style={styles.textInput}/>
+      <Text style={styles.textlbl}>Teléfono</Text>
+      <Input style={styles.textInput} />
       <Text style={styles.textlbl}>Contraseña</Text>
-      <Input secureTextEntry={true}/>
-      <Text style={styles.textlbl}>Confirmar Contraseña</Text>
-      <Input secureTextEntry={true}/>
+      <Input secureTextEntry={true}/>      
       <Button
       icon={
         <Icon
@@ -37,22 +57,7 @@ export default function registroMusico(props){
       marginLeft: 30,
       marginBottom: 8, 
       borderRadius: 20, 
-      color: "white"}}></Button>
-      <Button
-      icon={
-        <Icon
-          name="arrow-right"
-          size={15}
-          color="white"
-        />
-      }
-      title="Registrarse con Google" 
-      buttonStyle={{ backgroundColor: 'red', 
-      width: 300, 
-      marginRight: 30,
-      marginLeft: 30, 
-      borderRadius: 20, 
-      color: "white"}}></Button>
+      color: "white"}}></Button>      
       <Text style={styles.text}>
         ¿Ya estoy registrado?
         <Text style={styles.textLink} onPress={()=>{props.navigation.navigate('Login')}}> Iniciar Sesión</Text>
@@ -89,8 +94,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 180,
         marginLeft: 90,
-        marginRight: 90,
-        marginBottom: 10
+        marginRight: 90
     },
     textlbl: {
       color: "#2B8850",
@@ -102,14 +106,20 @@ const styles = StyleSheet.create({
     Cerrar:{
       width: 40,
       height: 40,
-      marginBottom: '10%',
+      marginBottom: '-2%',
       marginLeft: 5
     },
     textInput:{
       borderColor: "#B4B4B4",
       width: "90%",
-      margin: 10,
       fontSize: 23,      
       textAlign: "center"
+    },
+    textlbl2:{
+      color: "#2B8850",
+      fontSize: 42,
+      textAlign: "center",
+      fontWeight: 'bold',
+      marginBottom: '10%'
     }  
   });
