@@ -26,7 +26,7 @@ export default function inicio(props) {
                             title="REGISTRARSE"
                             titleStyle={{ color: "white", fontSize: 20 }}
                             buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200 }}
-                            onPress={()=>{props.navigation.navigate('Registro')}}>
+                            onPress={()=>{props.navigation.navigate('OpcionesRegistro')}}>
                         </Button>
                     </View>
                 </View>

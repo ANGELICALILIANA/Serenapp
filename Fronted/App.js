@@ -5,7 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Inicio from './components/inicio';
 import Login from './components/login';
-import Registro from './components/registro';
+import RegistroMusico from './components/registroMusico';
+import OpcionesRegistro from './components/registroOpciones';
 
 const Stack = createStackNavigator();
 
@@ -21,9 +22,16 @@ function LoginScreen({ navigation }) {
   );
 }
 
-function RegistroScreen({ navigation }) {
+function RegistroMusicoScreen({ navigation }) {
   return (
-    <Registro navigation={navigation} />
+    <OpcionesRegistro navigation={navigation} />
+
+  );
+}
+
+function RegistroOpcionesScreen({ navigation }) {
+  return (
+    <OpcionesRegistro navigation={navigation} />
 
   );
 }
@@ -36,7 +44,8 @@ function App() {
       {/* <Text>Prueba</Text>  */}
         <Stack.Screen name="Inicio" component={inicioApp} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Registro" component={RegistroScreen} /> 
+        <Stack.Screen name="OpcionesRegistro" component={RegistroOpcionesScreen} /> 
+        <Stack.Screen name="RegistroMusico" component={RegistroMusicoScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

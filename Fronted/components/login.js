@@ -46,7 +46,7 @@ export default function login(props){
       color: "white"}}></Button>
       <Text style={styles.text}>
         ¿Aun no estás registrado?
-            <Text style={styles.textLink} onPress={()=>{props.navigation.navigate('Registro')}}> Registrarse</Text>
+            <Text style={styles.textLink} onPress={()=>{props.navigation.navigate('OpcionesRegistro')}}> Registrarse</Text>
         </Text>      
       </ImageBackground>              
     </View>

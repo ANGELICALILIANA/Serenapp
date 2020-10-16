@@ -4,7 +4,7 @@ import { Input } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default function registro(props){
+export default function registroMusico(props){
   return(
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <ImageBackground source={require('../assets/Fondohomeunoserenapp.png')} style={styles.image}>      
