@@ -25,7 +25,8 @@ export default function inicio(props) {
                         <Button
                             title="REGISTRARSE"
                             titleStyle={{ color: "white", fontSize: 20 }}
-                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200 }}>
+                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200 }}
+                            onPress={()=>{props.navigation.navigate('Registro')}}>
                         </Button>
                     </View>
                 </View>

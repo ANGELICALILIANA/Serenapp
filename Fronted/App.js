@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Inicio from './components/inicio';
 import Login from './components/login';
+import Registro from './components/registro';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,13 @@ function LoginScreen({ navigation }) {
   );
 }
 
+function RegistroScreen({ navigation }) {
+  return (
+    <Registro navigation={navigation} />
+
+  );
+}
+
 
 function App() {
   return (    
@@ -27,7 +35,8 @@ function App() {
       <Stack.Navigator initialRouteName="Inicio" headerMode="none">
       {/* <Text>Prueba</Text>  */}
         <Stack.Screen name="Inicio" component={inicioApp} />
-        <Stack.Screen name="Login" component={LoginScreen} /> 
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Registro" component={RegistroScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

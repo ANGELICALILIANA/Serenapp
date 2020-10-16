@@ -1,17 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import { ImageBackground, StyleSheet, Text, View , Image, Modal, TouchableHighlight} from 'react-native';
+import { ImageBackground, StyleSheet, Text, View , Image, Modal, Linking, TouchableHighlight} from 'react-native';
 import { Input } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default function login(props){  
-    return(
+export default function registro(props){
+  return(
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <ImageBackground source={require('../assets/Fondohomeunoserenapp.png')} style={styles.image}>                      
-      <Image source={require('../assets/Iconocontexto.png')} style={styles.imgLogo}></Image>      
+      <ImageBackground source={require('../assets/Fondohomeunoserenapp.png')} style={styles.image}>      
+      {/* <View>
+      <TouchableHighlight onPress={()=>{ props.navigation.navigate('homeUno')}}>
+      <Image source={require('../assets/Iconocontexto.png')} style={styles.Cerrar}></Image>
+      </TouchableHighlight>
+      </View>*/}
+      <Image source={require('../assets/Iconocontexto.png')} style={styles.imgLogo}></Image>
+      <Text style={styles.textlbl}>Nombre de usuario</Text>
+      <Input style={styles.textInput}/>
       <Text style={styles.textlbl}>Email</Text>
-      <Input keyboardType={"email-address"} style={styles.textInput} />
+      <Input style={styles.textInput}/>
       <Text style={styles.textlbl}>Contraseña</Text>
+      <Input secureTextEntry={true}/>
+      <Text style={styles.textlbl}>Confirmar Contraseña</Text>
       <Input secureTextEntry={true}/>
       <Button
       icon={
@@ -21,7 +30,7 @@ export default function login(props){
           color="white"
         />
       }
-      title="Iniciar Sesión" 
+      title="Registrarse" 
       buttonStyle={{ backgroundColor: '#2B8850', 
       width: 300, 
       marginRight: 30,
@@ -37,7 +46,7 @@ export default function login(props){
           color="white"
         />
       }
-      title="Iniciar Sesión con Google" 
+      title="Registrarse con Google" 
       buttonStyle={{ backgroundColor: 'red', 
       width: 300, 
       marginRight: 30,
@@ -45,9 +54,9 @@ export default function login(props){
       borderRadius: 20, 
       color: "white"}}></Button>
       <Text style={styles.text}>
-        ¿Aun no estás registrado?
-            <Text style={styles.textLink} onPress={()=>{props.navigation.navigate('Registro')}}> Registrarse</Text>
-        </Text>      
+        ¿Ya estoy registrado?
+        <Text style={styles.textLink} onPress={()=>{props.navigation.navigate('Login')}}> Iniciar Sesión</Text>
+      </Text>      
       </ImageBackground>              
     </View>
     )
@@ -77,11 +86,11 @@ const styles = StyleSheet.create({
       marginTop: 10    
     },
     imgLogo: {
-      width: 180,
-      height: 180,
-      marginLeft: 90,
-      marginRight: 90,
-      marginBottom: 20
+        width: 180,
+        height: 180,
+        marginLeft: 90,
+        marginRight: 90,
+        marginBottom: 10
     },
     textlbl: {
       color: "#2B8850",
@@ -93,15 +102,14 @@ const styles = StyleSheet.create({
     Cerrar:{
       width: 40,
       height: 40,
-      marginBottom: '50%',
+      marginBottom: '10%',
       marginLeft: 5
     },
     textInput:{
-      borderColor: "#B4B4B4",      
-      height: 50,
+      borderColor: "#B4B4B4",
       width: "90%",
       margin: 10,
-      fontSize: 23,
+      fontSize: 23,      
       textAlign: "center"
     }  
   });
