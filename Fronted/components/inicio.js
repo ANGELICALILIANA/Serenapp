@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableHighlight, Image } from 'react-native';
 import { Button } from 'react-native-elements';
-import { Input } from 'react-native-elements';
-import { SearchBar } from 'react-native-elements';
 
 export default function inicio(props) {
     return (
@@ -10,28 +8,25 @@ export default function inicio(props) {
             style={styles.margenesVista}>
             <ImageBackground
                 source={require('../assets/Fondohomeunoserenapp.png')}
-                style={styles.imagenFondoEtologia}>
+                style={styles.imagenFondoInicio}>
                 <View>
                     <Image
-                        style={styles.iconoetologia}
-                        source={require('../assets/Iconocabezotesinmesadetrabajo.png')} />
-                </View>
-                <View style={styles.Descripcion}>
-                <Text style={styles.texto}>
-                    Serenapp
-                </Text>
+                        style={styles.iconoinicio}
+                        source={require('../assets/Iconocontexto.png')} />
                 </View>
                 <View style={styles.Descripcion}>
                     <View style={styles.Boton}>
                         <Button
                             title="INICIAR SESIÓN"
                             titleStyle={{ color: "white", fontSize: 20 }}
-                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, margin: 'auto', color: "white", width: 200 }}>
+                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200, marginBottom: 10 }}
+                            onPress={()=>{props.navigation.navigate('Login')}}>
                         </Button>
                         <Button
                             title="REGISTRARSE"
                             titleStyle={{ color: "white", fontSize: 20 }}
-                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, margin: 'auto', color: "white", width: 200 }}>
+                            buttonStyle={{ backgroundColor: '#2B8850', borderRadius: 25, marginLeft: 'auto', marginRight: 'auto', color: "white", width: 200 }}
+                            onPress={()=>{props.navigation.navigate('OpcionesRegistro')}}>
                         </Button>
                     </View>
                 </View>
@@ -41,9 +36,8 @@ export default function inicio(props) {
 };
 
 const styles = StyleSheet.create({
-    imagenFondoEtologia: {
+    imagenFondoInicio: {
         position: 'absolute',
-        resizeMode: "cover",
         justifyContent: "center",
         width: '100%',
         height: '100%',
@@ -52,31 +46,24 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
-    iconoetologia: {
-        width: 80,
-        height: 80,
+    iconoinicio: {
+        width: 180,
+        height: 180,
         marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: '-27%',
+        marginRight: 'auto'
     },
     texto: {
         width: '90%',
         color: '#2B8850',
-        fontSize: 100,
+        fontSize: 40,
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignContent: 'center',
-        marginLeft: 'auto',
-        marginTop: 'auto',
+        textAlign: 'center'
     },
     Descripcion: {
         paddingTop: 5,
         width: '100%',
         height: 175,
         marginLeft: 'auto',
-        marginRight: 'auto',
-        textAlign: 'justify',
-        marginLeft: '5%',
+        marginRight: 'auto'
     },
 });
